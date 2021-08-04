@@ -1,0 +1,51 @@
+const proImage = document.getElementById('pro-img');
+const factsList = document.getElementById('fact');
+const nextButton = document.getElementById('next');
+
+const catsFactsURL = `https://catfact.ninja/fact`;
+const imagesArray = [
+  '0.jpg',
+  '1.jpg',
+  '2.jpg',
+  '3.jpg',
+  '4.jpg',
+  '5.jpg',
+  '6.jpg',
+  '7.jpg',
+  '8.jpg',
+  '9.jpg',
+  '10.jpg',
+];
+
+function setCatImage() {
+  try {
+    const rndIndx = Math.floor(Math.random() * 10);
+    //console.log(url('C:\Users\lenovo\Desktop\cat-facts\images' +imagesArray[rndIndx]));
+    proImage.style.backgroundImage = 'url("C:\cat-facts\images ${imagesArray[rndIndx]}" )';
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+async function setCatFacts() {
+  try {
+    const data = await fetch(catsFactsURL);
+    const fact = await data.json();
+    factsList.innerHTML = `<p>${fact.fact}</p>`;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function run() {
+  setCatFacts();
+  setCatImage();
+}
+
+function nextFact() {
+  factsList.innerHTML = '';
+  setCatFacts();
+}
+run();
+
+nextButton.addEventListener('click', nextFact);

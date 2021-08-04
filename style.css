@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #56c6cecc;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+  filter: blur(8px);
+}
+
+.container {
+  position: relative;
+  width: 95%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.card {
+  width: 550px;
+  height: 480px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: #df853b27;
+  border-radius: 19px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px 3px #77777755, 0 5px 10px 3px #77777755;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#pro-img {
+  width: 100%;
+  height: 60%;
+  border-radius: 19px 19px 0 0;
+  background-image: url("");
+  background-position: center;
+  background-size: cover;
+}
+
+.details {
+  padding: 18px;
+  height: calc(100% - 60%);
+}
+
+.footer {
+  margin-top: auto;
+  margin-bottom: 3px;
+  font-size: 0.7rem;
+  width: 100%;
+  text-align: center;
+}
+
+.details h1 {
+  color: #2c2c2c;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #727272;
+}
+
+.details > hr {
+  margin-top: 20px;
+}
+
+#pro-img > hr {
+  margin-bottom: 20px;
+}
+
+#fact {
+  height: 80%;
+  margin-top: 18px;
+  font-size: 1.2rem;
+}
+
+p {
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+p::-webkit-scrollbar {
+  display: none;
+}
+
+.buttons {
+  margin: 8px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#next {
+  height: 28px;
+  width: 72px;
+  color: #202020;
+  background-color: #d0e0bc;
+  outline: none;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+#next:active {
+  box-shadow: 0 0 3px 3px #a5a5a5cc inset;
+}
+
+#next:hover {
+  background-color: #daebc5;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: 90vh;
+  }
+}
